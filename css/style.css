@@ -1,0 +1,139 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  font: 18px/18px Arial;
+}
+
+.radio-box-input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.radio-box-label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.radio-box-label::before {
+  content: "";
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #adb5bd;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+.radio-box-input:checked + .radio-box-label::before {
+  border-color: #0b76ef;
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e") no-repeat center #0b76ef;
+  background-size: 50%;
+}
+
+.radio-box-input:not(:disabled):not(:checked) + .radio-box-label:hover::before {
+  /* стили при наведении курсора на radio */
+  border-color: #b3d7ff;
+}
+
+.radio-box-input:not(:disabled):active + .radio-box-label::before {
+  /* стили для активного состояния radio (при нажатии на него) */
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+.radio-box-input:focus + .radio-box-label::before {
+  /* стили для radio, находящегося в фокусе */
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.radio-box-input:focus:not(:checked) + .radio-box-label::before {
+  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+  border-color: #80bdff;
+}
+
+.radio-box-input:disabled + .radio-box-label::before {
+  /* стили для чекбокса, находящегося в состоянии disabled */
+  background-color: #e9ecef;
+}
+/*# sourceMappingURL=style.css.map */
